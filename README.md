@@ -4,6 +4,8 @@
 
 ## 구조
 - `src/notion_db.py` : Notion 채용공고 DB에 공고 저장, 중복 확인
+- `src/sources/saramin.py` : 사람인 공고 가져오기 + 직무·경력 필터
+- `scripts/collect.py` : 모든 출처 수집 → Notion에 새 공고만 추가
 - `scripts/test_notion.py` : Notion 연결 테스트
 - `.github/workflows/` : GitHub Actions 예약 실행 설정
 
