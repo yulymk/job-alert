@@ -1,0 +1,20 @@
+name: Notion 연결 테스트
+
+# Actions 탭에서 'Run workflow' 버튼을 눌러 직접 실행한다.
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: 테스트 공고 넣기
+        run: python scripts/test_notion.py
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DB_ID: ${{ secrets.NOTION_DB_ID }}
